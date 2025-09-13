@@ -2,8 +2,8 @@ public class App {
     public static void mergeSort(int[] array, int begin, int end) {
         int middle;
         if (begin < end) {
-            middle = (begin + (end - begin)) / 2;
-            mergeSort(array, begin, end);
+            middle = begin + (end - begin) / 2;
+            mergeSort(array, begin, middle);
             mergeSort(array, middle + 1, end);
             merge(array, begin, middle, end);
         }
@@ -13,8 +13,8 @@ public class App {
         int[] output = new int[end - begin + 1];
         int i =  begin, j = middle + 1, k = 0;
 
-        while (i < middle && j <= end) {
-            if (array[i] < array[j]) {
+        while (i <= middle && j <= end) {
+            if (array[i] <= array[j]) {
                 output[k] = array[i];
                 k++;
                 i++;
@@ -37,7 +37,7 @@ public class App {
             j++;
         }
 
-        for (i = begin; i < end; i++) {
+        for (i = begin; i <= end; i++) {
             array[i] = output[i - begin];
         }
 
