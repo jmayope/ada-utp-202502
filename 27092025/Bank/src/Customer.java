@@ -14,7 +14,7 @@ public class Customer {
     }
 
     public boolean addAccount(String type) {
-        accounts.add(new Account("Deposito"));
+        accounts.add(new Account(type));
         return true;
     }
 
