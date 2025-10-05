@@ -44,7 +44,8 @@ public class Account {
             }
         }
         if (operationSuccess) {
-            movements.add(new Movement(operationType ? "Deposito" : "Retirar", amount));
+            movements.add(new Movement(operationType ? "Deposito" : "Retiro", amount));
+            System.out.println(String.format("%s satisfactorio", operationType ? "Deposito" : "Retiro"));
         }
     }
 
